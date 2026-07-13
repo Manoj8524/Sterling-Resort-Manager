@@ -1,11 +1,10 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
-import { supabase } from "@/lib/client";
-import { Sparkles, Loader2, Lock, Mail, LogIn, AlertCircle, HelpCircle } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Sparkles, Loader2, Lock, Mail, LogIn, AlertCircle } from "lucide-react";
 
 export const Route = createFileRoute("/login")({
   head: () => ({
@@ -18,22 +17,12 @@ export const Route = createFileRoute("/login")({
 });
 
 function LoginPage() {
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  const [successMsg, setSuccessMsg] = useState<string | null>(null);
-  const [isSignUp, setIsSignUp] = useState(false);
-  const [hasSupabase, setHasSupabase] = useState(true);
 
-  useEffect(() => {
-    // Check if Supabase keys exist
-    const hasKeys = !!import.meta.env.VITE_SUPABASE_URL && !!import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
-    setHasSupabase(hasKeys);
-  }, []);
-
-  const handleAuth = async (e: React.FormEvent) => {
+  const handleAuth = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !password) {
       setErrorMsg("Please enter both email and password.");
@@ -42,35 +31,12 @@ function LoginPage() {
 
     setLoading(true);
     setErrorMsg(null);
-    setSuccessMsg(null);
 
-    try {
-      if (isSignUp) {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-        });
-        if (error) throw error;
-        setSuccessMsg("Registration successful! Please check your email for a confirmation link or log in if auto-confirmed.");
-      } else {
-        const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
-        if (error) throw error;
-        window.location.href = "/";
-      }
-    } catch (err: any) {
-      console.error(err);
-      setErrorMsg(err.message || "An authentication error occurred.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleDemoBypass = () => {
-    localStorage.setItem("sterling_demo_user", "admin");
-    window.location.href = "/";
+    // Simulate a brief loading state for a smooth user experience, then redirect
+    setTimeout(() => {
+      localStorage.setItem("sterling_demo_user", email);
+      window.location.href = "/";
+    }, 600);
   };
 
   return (
@@ -89,18 +55,12 @@ function LoginPage() {
           <p className="text-sm text-muted-foreground font-medium">Resort Content & Operations Manager</p>
         </div>
 
-
-
         {/* Main Card */}
         <Card className="border border-border/40 bg-card/60 backdrop-blur-md shadow-card rounded-2xl">
           <CardHeader>
-            <CardTitle className="text-xl font-bold">
-              {isSignUp ? "Create an account" : "Welcome back"}
-            </CardTitle>
+            <CardTitle className="text-xl font-bold">Welcome back</CardTitle>
             <CardDescription>
-              {isSignUp
-                ? "Sign up to manage resort pages and content"
-                : "Enter your credentials to access the console"}
+              Enter your credentials to access the console
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -146,16 +106,9 @@ function LoginPage() {
                 </div>
               )}
 
-              {successMsg && (
-                <div className="rounded-lg bg-emerald-500/10 p-3 text-xs text-emerald-500 flex items-center gap-2 border border-emerald-500/20">
-                  <HelpCircle className="h-4 w-4 shrink-0" />
-                  <span>{successMsg}</span>
-                </div>
-              )}
-
               <Button
                 type="submit"
-                className="w-full gradient-primary shadow-violet text-primary-foreground hover:opacity-95 mt-2 h-10 font-semibold"
+                className="w-full gradient-primary shadow-violet text-primary-foreground hover:opacity-95 mt-4 h-10 font-semibold"
                 disabled={loading}
               >
                 {loading ? (
@@ -163,43 +116,10 @@ function LoginPage() {
                 ) : (
                   <LogIn className="h-4 w-4 mr-2" />
                 )}
-                {isSignUp ? "Sign Up" : "Sign In"}
+                Sign In
               </Button>
             </form>
           </CardContent>
-
-          <CardFooter className="flex flex-col space-y-3 pt-0 border-t border-border/20 mt-4">
-            {hasSupabase && (
-              <button
-                type="button"
-                onClick={() => {
-                  setIsSignUp(!isSignUp);
-                  setErrorMsg(null);
-                  setSuccessMsg(null);
-                }}
-                className="text-xs text-primary hover:underline font-semibold mt-4 transition-colors"
-              >
-                {isSignUp
-                  ? "Already have an account? Sign in"
-                  : "Need an account? Contact admin or sign up"}
-              </button>
-            )}
-
-            <div className="w-full flex items-center justify-between text-xs text-muted-foreground pt-4">
-              <span className="h-px w-1/3 bg-border" />
-              <span>Or Continue With</span>
-              <span className="h-px w-1/3 bg-border" />
-            </div>
-
-            <Button
-              type="button"
-              variant="outline"
-              onClick={handleDemoBypass}
-              className="w-full border-dashed border-primary/40 hover:border-primary hover:bg-primary/5 text-primary hover:text-primary transition-all duration-200 h-10 font-semibold"
-            >
-              <span>Demo Admin Bypass</span>
-            </Button>
-          </CardFooter>
         </Card>
 
         {/* Footer text */}

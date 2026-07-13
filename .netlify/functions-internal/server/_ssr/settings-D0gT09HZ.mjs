@@ -1,10 +1,10 @@
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
 import { t as Input } from "./input-B8Q2ztVi.mjs";
-import { t as Card } from "./card-BfBj_YIE.mjs";
+import { t as Card } from "./card-CtX3ithx.mjs";
 import { C as Settings } from "../_libs/lucide-react.mjs";
 import { t as Switch } from "./switch-Cn1w-cIH.mjs";
 import { t as Label } from "./label-DBD1bRRP.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/settings-LN4Ufq9X.js
+//#region node_modules/.nitro/vite/services/ssr/assets/settings-D0gT09HZ.js
 var import_jsx_runtime = require_jsx_runtime();
 var SplitComponent = () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 	className: "p-6 lg:p-8 max-w-[900px] mx-auto space-y-6",

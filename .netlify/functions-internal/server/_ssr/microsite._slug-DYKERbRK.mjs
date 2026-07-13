@@ -1,8 +1,8 @@
 import { r as getResort } from "./resorts-ClO0P_d2.mjs";
-import { M as notFound, h as createFileRoute, m as lazyRouteComponent } from "../_libs/@tanstack/react-router+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/microsite._slug-BRNJ6h3X.js
+import { h as createFileRoute, j as notFound, m as lazyRouteComponent } from "../_libs/@tanstack/react-router+[...].mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/microsite._slug-DYKERbRK.js
 var $$splitNotFoundComponentImporter = () => import("./microsite._slug-IRMUVeFn.mjs");
-var $$splitComponentImporter = () => import("./microsite._slug-BhY458Qi.mjs");
+var $$splitComponentImporter = () => import("./microsite._slug-GmfO-lg8.mjs");
 var Route = createFileRoute("/microsite/$slug")({
 	loader: ({ params }) => {
 		const resort = getResort(params.slug);

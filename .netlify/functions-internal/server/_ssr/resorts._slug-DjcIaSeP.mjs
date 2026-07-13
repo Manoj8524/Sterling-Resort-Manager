@@ -5,7 +5,7 @@ import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].m
 import { t as Button } from "./button-Bq5vK6RO.mjs";
 import { t as Input } from "./input-B8Q2ztVi.mjs";
 import { a as signalsFor, i as pagesFor, t as PAGE_TYPES } from "./resorts-ClO0P_d2.mjs";
-import { t as Card } from "./card-BfBj_YIE.mjs";
+import { t as Card } from "./card-CtX3ithx.mjs";
 import { t as Badge } from "./badge-D1Dupn2y.mjs";
 import { t as Progress } from "./progress-DOIEKRJF.mjs";
 import { A as Plane, B as MapPin, Ct as ChevronRight, D as Radar, Ot as Car, Rt as ArrowLeft, at as Flame, b as Sparkles, bt as CircleCheck, d as Trees, dt as Dumbbell, gt as Clock, i as WandSparkles, j as Phone, lt as ExternalLink, mt as Coffee, n as Wifi, o as UtensilsCrossed, ot as FileText, p as TramFront, r as Waves, s as Users, t as X, v as Star, wt as ChevronLeft } from "../_libs/lucide-react.mjs";
@@ -13,8 +13,8 @@ import { t as toast } from "../_libs/sonner.mjs";
 import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as Label } from "./label-DBD1bRRP.mjs";
 import { i as TabsTrigger, n as TabsContent, r as TabsList, t as Tabs } from "./tabs-CCJRliUM.mjs";
-import { t as Route } from "./resorts._slug-41F51mfQ.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/resorts._slug-BBXkguek.js
+import { t as Route } from "./resorts._slug-CudAvewy.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/resorts._slug-DjcIaSeP.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Textarea = import_react.forwardRef(({ className, ...props }, ref) => {

@@ -41,12 +41,14 @@ function RootComponent() {
   const [session, setSession] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [isDemo, setIsDemo] = useState(false);
+  const [demoEmail, setDemoEmail] = useState("admin@sterling.com");
 
   useEffect(() => {
     // Check if there is a demo user session in localStorage
     const demoUser = localStorage.getItem("sterling_demo_user");
     if (demoUser) {
       setIsDemo(true);
+      setDemoEmail(demoUser);
       setLoading(false);
       return;
     }
@@ -122,7 +124,7 @@ function RootComponent() {
                       </span>
                     )}
                     <div className="text-xs text-muted-foreground font-medium">
-                      {isDemo ? "admin@sterling.com" : session?.user?.email}
+                      {isDemo ? demoEmail : session?.user?.email}
                     </div>
                     <Button
                       variant="outline"

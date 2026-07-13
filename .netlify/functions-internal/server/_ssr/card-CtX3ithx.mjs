@@ -2,7 +2,7 @@ import { o as __toESM } from "../_runtime.mjs";
 import { t as cn } from "./utils-C_uf36nf.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/card-BfBj_YIE.js
+//#region node_modules/.nitro/vite/services/ssr/assets/card-CtX3ithx.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Card = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -42,4 +42,4 @@ var CardFooter = import_react.forwardRef(({ className, ...props }, ref) => /* @_
 }));
 CardFooter.displayName = "CardFooter";
 //#endregion
-export { CardHeader as a, CardFooter as i, CardContent as n, CardTitle as o, CardDescription as r, Card as t };
+export { CardTitle as a, CardHeader as i, CardContent as n, CardDescription as r, Card as t };

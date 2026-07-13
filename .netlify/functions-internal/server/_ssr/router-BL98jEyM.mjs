@@ -7,16 +7,16 @@ import { t as Button } from "./button-Bq5vK6RO.mjs";
 import { t as Input } from "./input-B8Q2ztVi.mjs";
 import { C as Settings, Dt as ChartColumn, F as PanelLeft, G as LoaderCircle, H as LogOut, Mt as Building2, X as LayoutDashboard, _t as ClipboardList, b as Sparkles, ot as FileText, t as X, ut as Earth, z as MessageCircleQuestionMark } from "../_libs/lucide-react.mjs";
 import { _ as Link, c as HeadContent, f as createRouter, g as createRootRouteWithContext, h as createFileRoute, l as useRouterState, m as lazyRouteComponent, p as Outlet, s as Scripts, u as ScrollRestoration } from "../_libs/@tanstack/react-router+[...].mjs";
-import { t as Route$12 } from "./ai-mode.agents._id-0ZwMnOwR.mjs";
-import { t as Route$13 } from "./g._resort._page-D4zWgTYI.mjs";
-import { t as supabase } from "./client-DEjS8uTy.mjs";
-import { t as Route$14 } from "./microsite._slug-BRNJ6h3X.mjs";
+import { t as Route$12 } from "./ai-mode.agents._id-D10XqawQ.mjs";
+import { t as Route$13 } from "./g._resort._page-Bj97TyTy.mjs";
+import { t as Route$14 } from "./microsite._slug-DYKERbRK.mjs";
 import { a as DialogOverlay, i as DialogDescription, n as DialogClose, o as DialogPortal, r as DialogContent, s as DialogTitle, t as Dialog } from "../_libs/@radix-ui/react-dialog+[...].mjs";
-import { t as Route$15 } from "./resorts._slug-41F51mfQ.mjs";
+import { t as Route$15 } from "./resorts._slug-CudAvewy.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
 import { a as Trigger, i as Root3, n as Portal, r as Provider, t as Content2 } from "../_libs/radix-ui__react-tooltip.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-MB_fLMUG.js
+import { t as createClient } from "../_libs/supabase__supabase-js.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BL98jEyM.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var MOBILE_BREAKPOINT = 768;
@@ -597,24 +597,63 @@ function AppSidebar() {
 		]
 	});
 }
-var styles_default = "/assets/styles-DXZ76OsV.css";
+function isNewSupabaseApiKey(value) {
+	return value.startsWith("sb_publishable_") || value.startsWith("sb_secret_");
+}
+function createSupabaseFetch(supabaseKey) {
+	return (input, init) => {
+		const headers = new Headers(typeof Request !== "undefined" && input instanceof Request ? input.headers : void 0);
+		if (init?.headers) new Headers(init.headers).forEach((value, key) => headers.set(key, value));
+		if (isNewSupabaseApiKey(supabaseKey) && headers.get("Authorization") === `Bearer ${supabaseKey}`) headers.delete("Authorization");
+		headers.set("apikey", supabaseKey);
+		return fetch(input, {
+			...init,
+			headers
+		});
+	};
+}
+function createSupabaseClient() {
+	const SUPABASE_URL = process.env.SUPABASE_URL;
+	const SUPABASE_PUBLISHABLE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY;
+	if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
+		const message = `Missing Supabase environment variable(s): ${[...!SUPABASE_URL ? ["SUPABASE_URL"] : [], ...!SUPABASE_PUBLISHABLE_KEY ? ["SUPABASE_PUBLISHABLE_KEY"] : []].join(", ")}. Connect Supabase in Lovable Cloud.`;
+		console.error(`[Supabase] ${message}`);
+		throw new Error(message);
+	}
+	return createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+		global: { fetch: createSupabaseFetch(SUPABASE_PUBLISHABLE_KEY) },
+		auth: {
+			storage: typeof window !== "undefined" ? localStorage : void 0,
+			persistSession: true,
+			autoRefreshToken: true
+		}
+	});
+}
+var _supabase;
+var supabase = new Proxy({}, { get(_, prop, receiver) {
+	if (!_supabase) _supabase = createSupabaseClient();
+	return Reflect.get(_supabase, prop, receiver);
+} });
+var styles_default = "/assets/styles-LN6V4hWO.css";
 var Route$11 = createRootRouteWithContext()({
-	meta: () => [
-		{ charSet: "utf-8" },
-		{
-			name: "viewport",
-			content: "width=device-width, initial-scale=1"
-		},
-		{ title: "Sterling Resort Manager" }
-	],
-	links: () => [{
-		rel: "stylesheet",
-		href: styles_default
-	}, {
-		rel: "icon",
-		type: "image/png",
-		href: "/favicon.png"
-	}],
+	head: () => ({
+		meta: [
+			{ charSet: "utf-8" },
+			{
+				name: "viewport",
+				content: "width=device-width, initial-scale=1"
+			},
+			{ title: "Sterling Resort Manager" }
+		],
+		links: [{
+			rel: "stylesheet",
+			href: styles_default
+		}, {
+			rel: "icon",
+			type: "image/png",
+			href: "/favicon.png"
+		}]
+	}),
 	component: RootComponent
 });
 function RootComponent() {
@@ -622,9 +661,12 @@ function RootComponent() {
 	const [session, setSession] = (0, import_react.useState)(null);
 	const [loading, setLoading] = (0, import_react.useState)(true);
 	const [isDemo, setIsDemo] = (0, import_react.useState)(false);
+	const [demoEmail, setDemoEmail] = (0, import_react.useState)("admin@sterling.com");
 	(0, import_react.useEffect)(() => {
-		if (localStorage.getItem("sterling_demo_user")) {
+		const demoUser = localStorage.getItem("sterling_demo_user");
+		if (demoUser) {
 			setIsDemo(true);
+			setDemoEmail(demoUser);
 			setLoading(false);
 			return;
 		}
@@ -678,7 +720,7 @@ function RootComponent() {
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 									className: "text-xs text-muted-foreground font-medium",
-									children: isDemo ? "admin@sterling.com" : session?.user?.email
+									children: isDemo ? demoEmail : session?.user?.email
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 									variant: "outline",
@@ -709,12 +751,12 @@ function ClientRedirect() {
 		})]
 	});
 }
-var $$splitComponentImporter$10 = () => import("./settings-LN4Ufq9X.mjs");
+var $$splitComponentImporter$10 = () => import("./settings-D0gT09HZ.mjs");
 var Route$10 = createFileRoute("/settings")({
 	head: () => ({ meta: [{ title: "Settings — Sterling AEO/GEO" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$10, "component")
 });
-var $$splitComponentImporter$9 = () => import("./review-queue-C006MFOw.mjs");
+var $$splitComponentImporter$9 = () => import("./review-queue-DVuk3moM.mjs");
 var Route$9 = createFileRoute("/review-queue")({
 	head: () => ({ meta: [{ title: "Review Queue — Sterling AEO/GEO" }, {
 		name: "description",
@@ -722,12 +764,12 @@ var Route$9 = createFileRoute("/review-queue")({
 	}] }),
 	component: lazyRouteComponent($$splitComponentImporter$9, "component")
 });
-var $$splitComponentImporter$8 = () => import("./pages-Cbjf8qVb.mjs");
+var $$splitComponentImporter$8 = () => import("./pages-CJj-Dqhj.mjs");
 var Route$8 = createFileRoute("/pages")({
 	head: () => ({ meta: [{ title: "Generated Pages — Sterling AEO/GEO" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$8, "component")
 });
-var $$splitComponentImporter$7 = () => import("./login-C0WWiV_X.mjs");
+var $$splitComponentImporter$7 = () => import("./login-x4iORemB.mjs");
 var Route$7 = createFileRoute("/login")({
 	head: () => ({ meta: [{ title: "Sign In — Sterling Resort Manager" }, {
 		name: "description",
@@ -743,7 +785,7 @@ var Route$6 = createFileRoute("/geo-manager")({
 	}] }),
 	component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
-var $$splitComponentImporter$5 = () => import("./analytics-t2RrW1Rl.mjs");
+var $$splitComponentImporter$5 = () => import("./analytics-DH603xcV.mjs");
 var Route$5 = createFileRoute("/analytics")({
 	head: () => ({ meta: [{ title: "Analytics — Sterling AEO/GEO" }, {
 		name: "description",
@@ -756,7 +798,7 @@ var Route$4 = createFileRoute("/ai-mode")({
 	head: () => ({ meta: [{ title: "AI Studio — Sterling AEO/GEO" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./aeo-manager-CuL8NzNQ.mjs");
+var $$splitComponentImporter$3 = () => import("./aeo-manager-CmYayHHA.mjs");
 var Route$3 = createFileRoute("/aeo-manager")({
 	head: () => ({ meta: [{ title: "AEO Manager — Question Workspace" }, {
 		name: "description",
@@ -764,7 +806,7 @@ var Route$3 = createFileRoute("/aeo-manager")({
 	}] }),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./routes-BiocXjIS.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-DOBDhOvh.mjs");
 var Route$2 = createFileRoute("/")({
 	head: () => ({ meta: [{ title: "Operations Dashboard — Sterling AEO/GEO" }, {
 		name: "description",
@@ -772,7 +814,7 @@ var Route$2 = createFileRoute("/")({
 	}] }),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./resorts.index-8CMaja7q.mjs");
+var $$splitComponentImporter$1 = () => import("./resorts.index-cbVXsvfJ.mjs");
 var Route$1 = createFileRoute("/resorts/")({
 	head: () => ({ meta: [{ title: "Resorts — Sterling AEO/GEO Admin" }, {
 		name: "description",
@@ -780,7 +822,7 @@ var Route$1 = createFileRoute("/resorts/")({
 	}] }),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./ai-mode.index-es43Jr8P.mjs");
+var $$splitComponentImporter = () => import("./ai-mode.index-D9zfHdYu.mjs");
 var Route = createFileRoute("/ai-mode/")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var SettingsRoute = Route$10.update({
 	id: "/settings",

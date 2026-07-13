@@ -1,10 +1,10 @@
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
 import { n as RESORTS } from "./resorts-ClO0P_d2.mjs";
-import { t as Card } from "./card-BfBj_YIE.mjs";
+import { t as Card } from "./card-CtX3ithx.mjs";
 import { t as Badge } from "./badge-D1Dupn2y.mjs";
 import { t as Progress } from "./progress-DOIEKRJF.mjs";
 import { Dt as ChartColumn, It as ArrowUpRight, L as MousePointerClick, Q as IndianRupee, b as Sparkles, ct as Eye, u as TrendingUp } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/analytics-t2RrW1Rl.js
+//#region node_modules/.nitro/vite/services/ssr/assets/analytics-DH603xcV.js
 var import_jsx_runtime = require_jsx_runtime();
 function Analytics() {
 	const spark = Array.from({ length: 24 }, (_, i) => 30 + Math.round(Math.sin(i / 3) * 20 + Math.random() * 15));

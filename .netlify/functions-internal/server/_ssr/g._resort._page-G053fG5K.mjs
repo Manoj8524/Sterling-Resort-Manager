@@ -1,11 +1,11 @@
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
 import { t as Button } from "./button-Bq5vK6RO.mjs";
-import { t as Card } from "./card-BfBj_YIE.mjs";
+import { t as Card } from "./card-CtX3ithx.mjs";
 import { t as Badge } from "./badge-D1Dupn2y.mjs";
 import { B as MapPin, Rt as ArrowLeft, b as Sparkles } from "../_libs/lucide-react.mjs";
 import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { t as Route } from "./g._resort._page-D4zWgTYI.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/g._resort._page-BT6cqEb1.js
+import { t as Route } from "./g._resort._page-Bj97TyTy.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/g._resort._page-G053fG5K.js
 var import_jsx_runtime = require_jsx_runtime();
 function PagePreview() {
 	const { resort, page, blocks } = Route.useLoaderData();
