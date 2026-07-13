@@ -1,4 +1,4 @@
-import { createRootRouteWithContext, Outlet, ScrollRestoration } from "@tanstack/react-router";
+import { createRootRouteWithContext, Outlet, ScrollRestoration, useRouterState } from "@tanstack/react-router";
 import { HeadContent, Scripts } from "@tanstack/react-router";
 import * as React from "react";
 import { QueryClient } from "@tanstack/react-query";
@@ -27,12 +27,13 @@ export const Route = createRootRouteWithContext<{
   ],
   links: () => [
     { rel: "stylesheet", href: styles },
+    { rel: "icon", type: "image/png", href: "/favicon.png" },
   ],
   component: RootComponent,
 });
 
 function RootComponent() {
-  const routerState = Route.useRouterState();
+  const routerState = useRouterState();
   const pathname = routerState.location.pathname;
 
   const [session, setSession] = useState<any>(null);

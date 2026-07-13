@@ -16,7 +16,7 @@ import { t as Route$15 } from "./resorts._slug-41F51mfQ.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
 import { a as Trigger, i as Root3, n as Portal, r as Provider, t as Content2 } from "../_libs/radix-ui__react-tooltip.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CsnY5g9r.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-MB_fLMUG.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var MOBILE_BREAKPOINT = 768;
@@ -610,11 +610,15 @@ var Route$11 = createRootRouteWithContext()({
 	links: () => [{
 		rel: "stylesheet",
 		href: styles_default
+	}, {
+		rel: "icon",
+		type: "image/png",
+		href: "/favicon.png"
 	}],
 	component: RootComponent
 });
 function RootComponent() {
-	const pathname = Route$11.useRouterState().location.pathname;
+	const pathname = useRouterState().location.pathname;
 	const [session, setSession] = (0, import_react.useState)(null);
 	const [loading, setLoading] = (0, import_react.useState)(true);
 	const [isDemo, setIsDemo] = (0, import_react.useState)(false);

@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-4sckWANA.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-C7K8aRQR.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/__root.tsx",
@@ -18,7 +18,7 @@ var tsrStartManifest = () => ({ routes: {
 			"/g/$resort/$page"
 		],
 		preloads: [
-			"/assets/index-DkHBxI9O.js",
+			"/assets/index-C5bInvE6.js",
 			"/assets/jsx-runtime-CZcjcDnw.js",
 			"/assets/createLucideIcon-BlXDHVeD.js",
 			"/assets/utils-H1H1Ii_Y.js",
@@ -34,20 +34,20 @@ var tsrStartManifest = () => ({ routes: {
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-DkHBxI9O.js"
+			src: "/assets/index-C5bInvE6.js"
 		} }]
 	},
 	"/": {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-C_YDKIIx.js",
+			"/assets/routes-BXVsqhPH.js",
 			"/assets/arrow-right-BontFere.js",
 			"/assets/bot-CFAG2PDf.js",
 			"/assets/calendar-days-Cp5Hqz9J.js",
 			"/assets/circle-check-Sc4lqkIZ.js",
 			"/assets/trending-up-Bp7C023u.js",
-			"/assets/checkbox-DZKOdD4e.js",
+			"/assets/checkbox-CxvyfKe5.js",
 			"/assets/card-BXhsO45U.js",
 			"/assets/badge-CQlaSmcV.js"
 		]
@@ -56,7 +56,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/aeo-manager.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/aeo-manager-Nalu-zeD.js",
+			"/assets/aeo-manager-hx_xFpnI.js",
 			"/assets/arrow-right-BontFere.js",
 			"/assets/bot-CFAG2PDf.js",
 			"/assets/circle-check-Sc4lqkIZ.js",
@@ -74,13 +74,13 @@ var tsrStartManifest = () => ({ routes: {
 	"/ai-mode": {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/ai-mode.tsx",
 		children: ["/ai-mode/", "/ai-mode/agents/$id"],
-		preloads: ["/assets/ai-mode-BJi3oLyQ.js"]
+		preloads: ["/assets/ai-mode-D6YopEe0.js"]
 	},
 	"/analytics": {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/analytics.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/analytics-BITUHJjf.js",
+			"/assets/analytics-CLmFYYkj.js",
 			"/assets/eye-DLWndIOc.js",
 			"/assets/trending-up-Bp7C023u.js",
 			"/assets/card-BXhsO45U.js",
@@ -92,7 +92,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/geo-manager.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/geo-manager-m3jKvld6.js",
+			"/assets/geo-manager-CyGOsyP8.js",
 			"/assets/arrow-right-BontFere.js",
 			"/assets/circle-check-Sc4lqkIZ.js",
 			"/assets/upload-CEwgKLOx.js",
@@ -107,7 +107,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/login.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/login-DwwnW0Xa.js",
+			"/assets/login-BtsZ7fEx.js",
 			"/assets/circle-question-mark-Dr7Ppmc4.js",
 			"/assets/mail-DhEj-44G.js",
 			"/assets/card-BXhsO45U.js",
@@ -118,8 +118,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/pages.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/pages-BYBTDoTb.js",
-			"/assets/select-BsPcDhbd.js",
+			"/assets/pages-C9us0Nkq.js",
+			"/assets/select-Cb1-pewK.js",
 			"/assets/circle-check-Sc4lqkIZ.js",
 			"/assets/circle-question-mark-Dr7Ppmc4.js",
 			"/assets/clock-DmWxa8cO.js",
@@ -134,7 +134,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/review-queue.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/review-queue-D1M2s5Td.js",
+			"/assets/review-queue-BE8ok00c.js",
 			"/assets/activity-CHfAW0We.js",
 			"/assets/arrow-right-BontFere.js",
 			"/assets/calendar-days-Cp5Hqz9J.js",
@@ -143,7 +143,7 @@ var tsrStartManifest = () => ({ routes: {
 			"/assets/funnel-DGeD9Cpc.js",
 			"/assets/star-GrE2FK0R.js",
 			"/assets/trending-up-Bp7C023u.js",
-			"/assets/checkbox-DZKOdD4e.js",
+			"/assets/checkbox-CxvyfKe5.js",
 			"/assets/card-BXhsO45U.js",
 			"/assets/badge-CQlaSmcV.js",
 			"/assets/dist-Dv9dqVt7.js",
@@ -154,9 +154,9 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/settings.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/settings-Bj99JTmC.js",
+			"/assets/settings-CUckNkz_.js",
 			"/assets/card-BXhsO45U.js",
-			"/assets/switch-BUajVrcC.js",
+			"/assets/switch-VKlVSBQV.js",
 			"/assets/label-jIahiHyc.js"
 		]
 	},
@@ -165,10 +165,10 @@ var tsrStartManifest = () => ({ routes: {
 		children: void 0,
 		preloads: [
 			"/assets/microsite._slug-C0rTfYmU.js",
-			"/assets/microsite._slug-D8oOG8oo.js",
+			"/assets/microsite._slug-CmEPhuPA.js",
 			"/assets/arrow-left-mvmFjOr0.js",
 			"/assets/calendar-days-Cp5Hqz9J.js",
-			"/assets/tabs-CMO1xyZZ.js",
+			"/assets/tabs-CYpLtYz4.js",
 			"/assets/dist-t2uo9ui4.js",
 			"/assets/mail-DhEj-44G.js",
 			"/assets/play-DoUy8HNS.js",
@@ -183,9 +183,9 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/resorts.$slug.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/resorts._slug-CGveMtVB.js",
+			"/assets/resorts._slug-CG-IAHnn.js",
 			"/assets/arrow-left-mvmFjOr0.js",
-			"/assets/tabs-CMO1xyZZ.js",
+			"/assets/tabs-CYpLtYz4.js",
 			"/assets/circle-check-Sc4lqkIZ.js",
 			"/assets/clock-DmWxa8cO.js",
 			"/assets/dist-t2uo9ui4.js",
@@ -204,21 +204,21 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/ai-mode.index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/ai-mode.index-BUl_fVta.js",
+			"/assets/ai-mode.index-2lgbE89L.js",
 			"/assets/activity-CHfAW0We.js",
 			"/assets/arrow-right-BontFere.js",
 			"/assets/card-BXhsO45U.js",
 			"/assets/badge-CQlaSmcV.js",
 			"/assets/proxy-DMYKRoNn.js",
-			"/assets/switch-BUajVrcC.js"
+			"/assets/switch-VKlVSBQV.js"
 		]
 	},
 	"/resorts/": {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/resorts.index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/resorts.index-Q5K7jY_B.js",
-			"/assets/select-BsPcDhbd.js",
+			"/assets/resorts.index-Dc-FZ19I.js",
+			"/assets/select-Cb1-pewK.js",
 			"/assets/dist-t2uo9ui4.js",
 			"/assets/funnel-DGeD9Cpc.js",
 			"/assets/radar-cp9mfQ2b.js",
@@ -232,7 +232,7 @@ var tsrStartManifest = () => ({ routes: {
 		children: void 0,
 		preloads: [
 			"/assets/ai-mode.agents._id-BiXtpyaM.js",
-			"/assets/ai-mode.agents._id-C20HwiRG.js",
+			"/assets/ai-mode.agents._id-C9nJgZmN.js",
 			"/assets/arrow-left-mvmFjOr0.js",
 			"/assets/check-BCrbOwvW.js",
 			"/assets/clock-DmWxa8cO.js",
@@ -242,14 +242,14 @@ var tsrStartManifest = () => ({ routes: {
 			"/assets/progress-Bvvz2Ien.js",
 			"/assets/dist-Dv9dqVt7.js",
 			"/assets/proxy-DMYKRoNn.js",
-			"/assets/switch-BUajVrcC.js"
+			"/assets/switch-VKlVSBQV.js"
 		]
 	},
 	"/g/$resort/$page": {
 		filePath: "D:/Sterling-Resort-Manager/src/routes/g.$resort.$page.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/g._resort._page-18HV6W8Q.js",
+			"/assets/g._resort._page-Clf5l30I.js",
 			"/assets/arrow-left-mvmFjOr0.js",
 			"/assets/card-BXhsO45U.js",
 			"/assets/badge-CQlaSmcV.js",
