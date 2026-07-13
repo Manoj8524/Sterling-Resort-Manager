@@ -89,16 +89,7 @@ function LoginPage() {
           <p className="text-sm text-muted-foreground font-medium">Resort Content & Operations Manager</p>
         </div>
 
-        {/* Credentials Missing Banner */}
-        {!hasSupabase && (
-          <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-4 text-amber-500 flex items-start gap-3 animate-fade-in shadow-sm">
-            <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
-            <div className="text-xs space-y-1">
-              <p className="font-bold">Supabase is not connected</p>
-              <p className="opacity-90">To test authentication, configure the environment variables on Netlify. In the meantime, you can explore using the Demo Bypass below.</p>
-            </div>
-          </div>
-        )}
+
 
         {/* Main Card */}
         <Card className="border border-border/40 bg-card/60 backdrop-blur-md shadow-card rounded-2xl">
@@ -126,7 +117,6 @@ function LoginPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     className="pl-10"
                     required
-                    disabled={!hasSupabase}
                   />
                 </div>
               </div>
@@ -145,7 +135,6 @@ function LoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     className="pl-10"
                     required
-                    disabled={!hasSupabase}
                   />
                 </div>
               </div>
@@ -167,7 +156,7 @@ function LoginPage() {
               <Button
                 type="submit"
                 className="w-full gradient-primary shadow-violet text-primary-foreground hover:opacity-95 mt-2 h-10 font-semibold"
-                disabled={loading || !hasSupabase}
+                disabled={loading}
               >
                 {loading ? (
                   <Loader2 className="h-4 w-4 animate-spin mr-2" />
