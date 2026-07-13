@@ -1,0 +1,389 @@
+import { At as Calendar, B as MapPin, C as Settings, I as Navigation, Pt as BookOpen, R as MessageSquare, a as Utensils, et as Image, ht as Cloud, m as ThumbsUp, pt as Compass, q as Link, rt as Globe, w as Search, y as SquareCheckBig } from "../_libs/lucide-react.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/ai-agents-TtkTV8M5.js
+var WORKFLOW = [
+	{
+		step: "Signal Mining",
+		desc: "Crawling travel forums, search consoles, and local news."
+	},
+	{
+		step: "AI Assessment",
+		desc: "Zod-validated agent runs evaluating user intent and accuracy."
+	},
+	{
+		step: "Human Review",
+		desc: "Operations console vetting of draft pages and schema updates."
+	},
+	{
+		step: "One-click Publish",
+		desc: "Instantly deployed to Netlify via headless edge routes."
+	}
+];
+var AGENTS = [
+	{
+		id: "attraction-crawler",
+		name: "Attraction Crawler",
+		category: "Discovery",
+		priority: "High",
+		active: true,
+		tagline: "Discovers hidden local spots and points of interest near resorts.",
+		question: "What new attraction within 15km has recently spiked in reviews or mentions?",
+		discovers: [
+			"Scenic viewpoints",
+			"Local temples",
+			"Hidden waterfalls",
+			"Historical sites"
+		],
+		examples: ["Surfaced 'Kurumba Waterfall' as a trending search within 8km of Sterling Ooty.", "Found new organic tea estate tour opening near Sterling Yercaud."],
+		runs: 342,
+		drafts: 24,
+		successRate: 98,
+		color: "from-emerald-500 to-emerald-600 bg-emerald-500",
+		icon: MapPin
+	},
+	{
+		id: "event-miner",
+		name: "Event Miner",
+		category: "Discovery",
+		priority: "Medium",
+		active: true,
+		tagline: "Scrapes regional events, festivals, and cultural activities.",
+		question: "Are there upcoming local events our guests would travel for?",
+		discovers: [
+			"Food festivals",
+			"Music concerts",
+			"Traditional temple festivals",
+			"Flower shows"
+		],
+		examples: ["Identified the 'Ooty Summer Flower Show' dates and drafted a promotional landing page.", "Drafted event schedule for Yercaud Summer Festival."],
+		runs: 215,
+		drafts: 12,
+		successRate: 94,
+		color: "from-cyan-500 to-cyan-600 bg-cyan-500",
+		icon: Calendar
+	},
+	{
+		id: "trekking-scout",
+		name: "Trekking Scout",
+		category: "Discovery",
+		priority: "Low",
+		active: true,
+		tagline: "Identifies hiking and adventure trails near properties.",
+		question: "Which trekking paths are being frequently logged in open-source trail maps?",
+		discovers: [
+			"Forest trails",
+			"Mountain peaks",
+			"Bird watching trails",
+			"Safari routes"
+		],
+		examples: ["Mapped the new 'Flat Hill Trail' near Sterling Kodaikanal.", "Drafted a safety guide for 'Elk Hill trek' in Ooty."],
+		runs: 128,
+		drafts: 8,
+		successRate: 92,
+		color: "from-teal-500 to-teal-600 bg-teal-500",
+		icon: Compass
+	},
+	{
+		id: "restaurant-guide",
+		name: "Restaurant Guide",
+		category: "Local",
+		priority: "Medium",
+		active: true,
+		tagline: "Curates iconic regional cuisine and highly-rated dining spots.",
+		question: "What local dining experience has achieved viral status on culinary blogs?",
+		discovers: [
+			"Authentic eateries",
+			"Local specialty cafes",
+			"Organic farm restaurants",
+			"Street food walks"
+		],
+		examples: ["Drafted Yercaud's 'Must-try tribal cuisine restaurants' list.", "Identified top 3 coffee estate cafes in Ooty."],
+		runs: 289,
+		drafts: 15,
+		successRate: 96,
+		color: "from-orange-500 to-orange-600 bg-orange-500",
+		icon: Utensils
+	},
+	{
+		id: "weather-predictor",
+		name: "Weather Predictor",
+		category: "Local",
+		priority: "Low",
+		active: false,
+		tagline: "Extracts seasonal weather signals for packing and itinerary advice.",
+		question: "What micro-climate variations are currently affecting resort accessibility?",
+		discovers: [
+			"Mist intervals",
+			"Monsoon routes",
+			"Snowfall updates",
+			"Ideal clothing advice"
+		],
+		examples: ["Drafted a winter packing list for Sterling Kofri.", "Updated rain precautions guide for Sterling Wayanad."],
+		runs: 95,
+		drafts: 2,
+		successRate: 89,
+		color: "from-blue-500 to-blue-600 bg-blue-500",
+		icon: Cloud
+	},
+	{
+		id: "history-buff",
+		name: "History Buff",
+		category: "Local",
+		priority: "Low",
+		active: true,
+		tagline: "Collects folklore and historic trivia about destinations.",
+		question: "What historical anecdotes or cultural folklore are associated with our resort's site?",
+		discovers: [
+			"Colonial history",
+			"Local tribal lore",
+			"Ancient monument facts",
+			"Origin stories"
+		],
+		examples: ["Created local legend write-up for the 'Kurinji Flower' bloom near Sterling Kodaikanal.", "Drafted historical summary of Fern Hill Palace near Sterling Ooty."],
+		runs: 144,
+		drafts: 9,
+		successRate: 95,
+		color: "from-amber-500 to-amber-600 bg-amber-500",
+		icon: BookOpen
+	},
+	{
+		id: "faq-generator",
+		name: "FAQ Generator",
+		category: "Answer Engine",
+		priority: "High",
+		active: true,
+		tagline: "Generates semantic FAQs targeting direct answers in search engines.",
+		question: "What questions do users ask Google that remain unanswered on our website?",
+		discovers: [
+			"Direct answers",
+			"Travel queries",
+			"Resort amenities",
+			"Local distance FAQs"
+		],
+		examples: ["Surfaced query 'Is there a pet-friendly room in Sterling Ooty?' and drafted FAQ item.", "Generated schema-ready FAQ for local sightseeing tour booking."],
+		runs: 412,
+		drafts: 38,
+		successRate: 99,
+		color: "from-indigo-500 to-indigo-600 bg-indigo-500",
+		icon: MessageSquare
+	},
+	{
+		id: "schema-optimizer",
+		name: "Schema Optimizer",
+		category: "Answer Engine",
+		priority: "Critical",
+		active: true,
+		tagline: "Builds rich structured schema data for better search indexing.",
+		question: "Which of our pages lack structured schemas for hotels, events, or local businesses?",
+		discovers: [
+			"JSON-LD schema",
+			"Local Business schema",
+			"Hotel schema",
+			"FAQ Page schema"
+		],
+		examples: ["Generated Hotel Schema with updated room amenities for Sterling Yercaud.", "Added Event schema for the upcoming holiday carnival."],
+		runs: 520,
+		drafts: 48,
+		successRate: 100,
+		color: "from-violet-500 to-violet-600 bg-violet-500",
+		icon: Settings
+	},
+	{
+		id: "competitor-watcher",
+		name: "Competitor Watcher",
+		category: "Answer Engine",
+		priority: "High",
+		active: true,
+		tagline: "Monitors search result rankings of regional competitors.",
+		question: "What keywords are competitors ranking for that we are currently missing?",
+		discovers: [
+			"Keyword gaps",
+			"Meta descriptions",
+			"Ranking shifts",
+			"Competitor blog posts"
+		],
+		examples: ["Drafted a comparison article for 'Sterling vs competitors in Kodaikanal' highlighting premium features.", "Identified key competitor gains in 'Yercaud plantation stays' keyword."],
+		runs: 310,
+		drafts: 18,
+		successRate: 93,
+		color: "from-rose-500 to-rose-600 bg-rose-500",
+		icon: Search
+	},
+	{
+		id: "spelling-check",
+		name: "Spelling & Grammar",
+		category: "Quality",
+		priority: "Medium",
+		active: true,
+		tagline: "Validates grammatical precision and brand tone of pages.",
+		question: "Are there grammatical errors or non-standard brand spellings in our latest updates?",
+		discovers: [
+			"Spelling typos",
+			"Tone checks",
+			"Brand compliance",
+			"Formatting errors"
+		],
+		examples: ["Flagged 'Kodaikanal' misspelled in Yercaud destination guide.", "Normalized font style consistency across resort descriptions."],
+		runs: 610,
+		drafts: 0,
+		successRate: 100,
+		color: "from-emerald-500 to-emerald-600 bg-emerald-500",
+		icon: SquareCheckBig
+	},
+	{
+		id: "seo-auditor",
+		name: "SEO Auditor",
+		category: "Quality",
+		priority: "High",
+		active: true,
+		tagline: "Verifies page titles, headings, and readability scores.",
+		question: "Which live pages violate standard SEO guidelines like H1 counts or image alt text?",
+		discovers: [
+			"H1 tag errors",
+			"Alt tag misses",
+			"Keyword stuffing",
+			"Page readability"
+		],
+		examples: ["Fixed duplicate H1 header on Sterling Mount Abu room catalog.", "Added alt text suggestions to 12 landing page images."],
+		runs: 480,
+		drafts: 5,
+		successRate: 98,
+		color: "from-sky-500 to-sky-600 bg-sky-500",
+		icon: Globe
+	},
+	{
+		id: "link-validator",
+		name: "Link Validator",
+		category: "Quality",
+		priority: "Critical",
+		active: true,
+		tagline: "Audits outgoing hyper-links and flags broken urls.",
+		question: "Do we have broken outbound links or redirection loops in our pages?",
+		discovers: [
+			"Broken URLs",
+			"Redirect loops",
+			"Non-HTTPS warnings",
+			"404 errors"
+		],
+		examples: ["Flagged dead tourism board link on Wayanad packages page.", "Redirected outdated local travel booking partner link."],
+		runs: 390,
+		drafts: 0,
+		successRate: 100,
+		color: "from-red-500 to-red-600 bg-red-500",
+		icon: Link
+	},
+	{
+		id: "sentiment-analyst",
+		name: "Sentiment Analyst",
+		category: "Quality",
+		priority: "Medium",
+		active: true,
+		tagline: "Scans reviews to identify opportunities for highlighting positive features.",
+		question: "What specific resort features have positive review sentiments that we can highlight?",
+		discovers: [
+			"Positive highlights",
+			"Customer praise",
+			"Pool reviews",
+			"Buffet ratings"
+		],
+		examples: ["Created feature card highlighting 'Infinity Pool views' at Sterling Wayanad based on guest reviews.", "Surfaced guest praise on Yercaud campfire activities."],
+		runs: 275,
+		drafts: 14,
+		successRate: 96,
+		color: "from-pink-500 to-pink-600 bg-pink-500",
+		icon: ThumbsUp
+	},
+	{
+		id: "photo-analyzer",
+		name: "Photo Analyzer",
+		category: "Discovery",
+		priority: "Medium",
+		active: true,
+		tagline: "Filters and indexes tourist photos of local sights.",
+		question: "What high-quality images of local attractions can we legally source?",
+		discovers: [
+			"Creative commons images",
+			"Scenic views",
+			"Guest uploads",
+			"Resort activities"
+		],
+		examples: ["Identified beautiful open-license picture of Yercaud Lake for the microsite.", "Flagged blurry banner image in Ooty gallery."],
+		runs: 198,
+		drafts: 7,
+		successRate: 91,
+		color: "from-violet-500 to-violet-600 bg-violet-500",
+		icon: Image
+	},
+	{
+		id: "route-planner",
+		name: "Route Planner",
+		category: "Local",
+		priority: "Low",
+		active: true,
+		tagline: "Calculates transit details and routes from major transport hubs.",
+		question: "What updates have occurred in regional bus or flight routes to our resorts?",
+		discovers: [
+			"Train timings",
+			"Bus schedules",
+			"Airport transfers",
+			"Road condition alerts"
+		],
+		examples: ["Updated road diversion route info for travelers from Coimbatore to Ooty.", "Drafted airport shuttle guidelines for Sterling Mount Abu."],
+		runs: 112,
+		drafts: 4,
+		successRate: 95,
+		color: "from-purple-500 to-purple-600 bg-purple-500",
+		icon: Navigation
+	}
+];
+var INBOX = [
+	{
+		id: "inbox-1",
+		agent: "attraction-crawler",
+		category: "opportunities",
+		title: "Surfaced Kurumba Waterfall",
+		detail: "Kurumba Waterfall is showing a 40% spike in search volume. Recommend creating a dedicated guide page for Sterling Ooty.",
+		impact: "High",
+		createdAt: "2 hours ago"
+	},
+	{
+		id: "inbox-2",
+		agent: "event-miner",
+		category: "seasonal",
+		title: "Ooty Summer Festival Landing Draft",
+		detail: "Drafted seasonal event landing page featuring flower shows, fruit shows, and traditional dances. Needs approval.",
+		impact: "High",
+		createdAt: "4 hours ago"
+	},
+	{
+		id: "inbox-3",
+		agent: "faq-generator",
+		category: "updates",
+		title: "Draft FAQ: Pet policy updates",
+		detail: "Guest queries for pet-friendly policies at Sterling Yercaud have doubled. Drafted FAQ schema update.",
+		impact: "Medium",
+		createdAt: "6 hours ago"
+	},
+	{
+		id: "inbox-4",
+		agent: "competitor-watcher",
+		category: "competitor",
+		title: "Competitor Ranking Alert: Yercaud plantations",
+		detail: "Resort Elite has launched a new page for 'tribal coffee tours' ranking at pos #3. We should index our organic plantation tours page.",
+		impact: "High",
+		createdAt: "1 day ago"
+	},
+	{
+		id: "inbox-5",
+		agent: "seo-auditor",
+		category: "performance",
+		title: "Double H1 tags on Mount Abu Landing Page",
+		detail: " Mount Abu Resort page contains two H1 tags which dilutes SEO authority. Drafted header alignment correction.",
+		impact: "Medium",
+		createdAt: "2 days ago"
+	}
+];
+function getAgent(id) {
+	return AGENTS.find((a) => a.id === id);
+}
+//#endregion
+export { getAgent as i, INBOX as n, WORKFLOW as r, AGENTS as t };
